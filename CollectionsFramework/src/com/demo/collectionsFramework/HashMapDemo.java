@@ -39,6 +39,7 @@ public class HashMapDemo {
 		//Here we are going to remove a specific element
 		hmap.remove(2);
 		
+		
 		//Here we display the modified content using Iterator
 		Set set2 = hmap.entrySet();
 		Iterator iterator2 = set2.iterator();
@@ -46,8 +47,6 @@ public class HashMapDemo {
 			Map.Entry mentry2 = (Map.Entry) iterator2.next();
 			System.out.println("key is: " + mentry2.getKey() + " & value is: " + mentry2.getValue());
 			//the above line should print out the elements of the HashMap except the removed one
-		}
-		
+		}	
 	}
-
 }
