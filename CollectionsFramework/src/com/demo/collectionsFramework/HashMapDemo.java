@@ -9,6 +9,9 @@ public class HashMapDemo {
 	
 	/*
 	 * HashMap is a Map based collection class that is used for storing Key/Value pairs 
+	 * 		it is not ordered so they will not come out in the same order they were inserted
+	 * 		it does not sort the key/value pairs
+	 *		it allows for null key/value
 	 */
 	@SuppressWarnings("rawtypes")
 	public static void main(String []args) {
