@@ -1,8 +1,10 @@
-package com.demo.helloWorld;
+package com.demo.tutorial;
 
 import java.util.Scanner;
 
-public class Main {
+public class MorgageCalculator {
+	
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 /*		Scanner scanner = new Scanner(System.in);
 		System.out.print("Age: ");
