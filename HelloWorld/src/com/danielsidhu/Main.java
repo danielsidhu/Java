@@ -1,6 +1,6 @@
 package com.danielsidhu;
 
-import java.util.Date;
+import java.util.*;
 
 public class Main {
 
@@ -25,7 +25,7 @@ public class Main {
 		//System.out.println(age);// printing out the age
 
 		byte myAge = 26;
-		long viewCount = 3_003_034;
+		long viewCount = 3_003_034;//can use the underscore to show the commas so this number is 3,003,034
 		float price = 33.12f;
 		
 		Date now = new Date();
@@ -40,7 +40,9 @@ public class Main {
 		double equation = 8/2*(2+2);
 		System.out.println(equation);
 		
+		int[] array = {1, 2, 3, 4, 5};
 		
+		System.out.println(Arrays.toString(array));
 		
 		
 	}
