@@ -1,8 +1,12 @@
 package com.danielsidhu;
 
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class ScannerTutorial {
+
+	final static int months = 12;
+	final static int percent = 100;
 
 	public static void main(String[] args) {
 
@@ -61,8 +65,27 @@ public class ScannerTutorial {
 //		double morgage = principal * (monthlyInterest * Math.pow((1 + monthlyInterest), payments ) / ((Math.pow((1 + monthlyInterest), payments) - 1)));
 //		System.out.println("Your Morgage is " + morgage);
 
+		printMortgage(principal, annualInterest, years);
+		printPaymentSchedule(principal, annualInterest, years);
+	}
+
+	public static void printMortgage(double principal, double annualInterest, int years) {
 		double mortgage = calculateMortgage(principal, annualInterest, years);
-		System.out.println("Your Morgage is " + mortgage);
+		System.out.println();
+		System.out.println("MORTGAGE");
+		System.out.println("--------");
+		System.out.println("Your Morgage is " + NumberFormat.getCurrencyInstance().format(mortgage));
+	}
+
+	public static void printPaymentSchedule(double principal, double annualInterest, int years) {
+		System.out.println();
+		System.out.println("PAYMENT SCHEDULE");
+		System.out.println("----------------");
+		System.out.println();
+		for (int month = 0; month <= years * months; month++) {
+			double balance = calculateBalance(principal, annualInterest, years, month);
+			System.out.println(NumberFormat.getCurrencyInstance().format(balance));
+		}
 	}
 
 	@SuppressWarnings("resource")
@@ -84,9 +107,6 @@ public class ScannerTutorial {
 
 	public static double calculateMortgage(double principal, double annualInterest, int years) {
 
-		int months = 12;
-		int percent = 100;
-
 		double monthlyInterest = (annualInterest / percent) / months;
 		int payments = years * months;
 
@@ -94,5 +114,17 @@ public class ScannerTutorial {
 				/ ((Math.pow((1 + monthlyInterest), payments) - 1)));
 
 		return mortgage;
+	}
+
+	public static double calculateBalance(double principal, double annualInterest, int years,
+			int numberOfPaymentsMade) {
+
+		double monthlyInterest = (annualInterest / percent) / months;
+		int payments = years * months;
+		double balance = principal
+				* (Math.pow((1 + monthlyInterest), payments) - Math.pow((1 + monthlyInterest), numberOfPaymentsMade))
+				/ (Math.pow((1 + monthlyInterest), payments) - 1);
+
+		return balance;
 	}
 }
