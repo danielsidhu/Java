@@ -81,7 +81,6 @@ public class ScannerTutorial {
 		System.out.println();
 		System.out.println("PAYMENT SCHEDULE");
 		System.out.println("----------------");
-		System.out.println();
 		for (int month = 0; month <= years * months; month++) {
 			double balance = calculateBalance(principal, annualInterest, years, month);
 			System.out.println(NumberFormat.getCurrencyInstance().format(balance));
@@ -109,7 +108,6 @@ public class ScannerTutorial {
 
 		double monthlyInterest = (annualInterest / percent) / months;
 		int payments = years * months;
-
 		double mortgage = principal * (monthlyInterest * Math.pow((1 + monthlyInterest), payments)
 				/ ((Math.pow((1 + monthlyInterest), payments) - 1)));
 
