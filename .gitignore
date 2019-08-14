@@ -22,6 +22,8 @@
 *.launch
 .settings/
 *.sublime-workspace
+.metadata
+bin/**
 
 # IDE - VSCode
 .vscode/*
