@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class ScannerTutorial {
 
-	final static int months = 12;
-	final static int percent = 100;
+//	final static int months = 12;
+//	final static int percent = 100;
 
 	public static void main(String[] args) {
 
@@ -20,9 +20,14 @@ public class ScannerTutorial {
 //		@SuppressWarnings("resource")
 //		Scanner scanner = new Scanner(System.in);
 
-		double principal = readNumber("Principal: ", 1_000, 1_000_000);
-		double annualInterest = readNumber("Annual Interest Rate: ", 1, 30);
-		int years = (int) readNumber("Years: ", 1, 30);
+		double principal = Console.readNumber("Principal: ", 1_000, 1_000_000);
+		double annualInterest = Console.readNumber("Annual Interest Rate: ", 1, 30);
+		int years = (int) Console.readNumber("Years: ", 1, 30);
+		
+		MortgageCalculator calculator = new MortgageCalculator(principal, annualInterest, years);
+		MortgageReport report = new MortgageReport(calculator);
+		report.printMortgage();
+		report.printPaymentSchedule();
 
 //		while (true) {
 //			System.out.print("Enter your principal between 1k and 1M ");
@@ -65,64 +70,62 @@ public class ScannerTutorial {
 //		double morgage = principal * (monthlyInterest * Math.pow((1 + monthlyInterest), payments ) / ((Math.pow((1 + monthlyInterest), payments) - 1)));
 //		System.out.println("Your Morgage is " + morgage);
 
-		printMortgage(principal, annualInterest, years);
-		printPaymentSchedule(principal, annualInterest, years);
 	}
 
-	public static void printMortgage(double principal, double annualInterest, int years) {
-		double mortgage = calculateMortgage(principal, annualInterest, years);
-		System.out.println();
-		System.out.println("MORTGAGE");
-		System.out.println("--------");
-		System.out.println("Your Morgage is " + NumberFormat.getCurrencyInstance().format(mortgage));
-	}
+//	public static void printMortgage(double principal, double annualInterest, int years) {
+//		double mortgage = calculateMortgage(principal, annualInterest, years);
+//		System.out.println();
+//		System.out.println("MORTGAGE");
+//		System.out.println("--------");
+//		System.out.println("Your Morgage is " + NumberFormat.getCurrencyInstance().format(mortgage));
+//	}
+//
+//	public static void printPaymentSchedule(double principal, double annualInterest, int years) {
+//		System.out.println();
+//		System.out.println("PAYMENT SCHEDULE");
+//		System.out.println("----------------");
+//		for (int month = 0; month <= years * months; month++) {
+//			double balance = calculateBalance(principal, annualInterest, years, month);
+//			System.out.println(NumberFormat.getCurrencyInstance().format(balance));
+//		}
+//	}
 
-	public static void printPaymentSchedule(double principal, double annualInterest, int years) {
-		System.out.println();
-		System.out.println("PAYMENT SCHEDULE");
-		System.out.println("----------------");
-		for (int month = 0; month <= years * months; month++) {
-			double balance = calculateBalance(principal, annualInterest, years, month);
-			System.out.println(NumberFormat.getCurrencyInstance().format(balance));
-		}
-	}
+//	@SuppressWarnings("resource")
+//	public static double readNumber(String prompt, double min, double max) {
+//		Scanner scanner = new Scanner(System.in);
+//		double value;
+//		while (true) {
+//			System.out.print(prompt);
+//			value = scanner.nextDouble();
+//
+//			if (value >= min && value <= max) {
+//				break;
+//			} else {
+//				System.out.println("Enter a value between " + min + " and " + max);
+//			}
+//		}
+//		return value;
+//	}
 
-	@SuppressWarnings("resource")
-	public static double readNumber(String prompt, double min, double max) {
-		Scanner scanner = new Scanner(System.in);
-		double value;
-		while (true) {
-			System.out.print(prompt);
-			value = scanner.nextDouble();
-
-			if (value >= min && value <= max) {
-				break;
-			} else {
-				System.out.println("Enter a value between " + min + " and " + max);
-			}
-		}
-		return value;
-	}
-
-	public static double calculateMortgage(double principal, double annualInterest, int years) {
-
-		double monthlyInterest = (annualInterest / percent) / months;
-		int payments = years * months;
-		double mortgage = principal * (monthlyInterest * Math.pow((1 + monthlyInterest), payments)
-				/ ((Math.pow((1 + monthlyInterest), payments) - 1)));
-
-		return mortgage;
-	}
-
-	public static double calculateBalance(double principal, double annualInterest, int years,
-			int numberOfPaymentsMade) {
-
-		double monthlyInterest = (annualInterest / percent) / months;
-		int payments = years * months;
-		double balance = principal
-				* (Math.pow((1 + monthlyInterest), payments) - Math.pow((1 + monthlyInterest), numberOfPaymentsMade))
-				/ (Math.pow((1 + monthlyInterest), payments) - 1);
-
-		return balance;
-	}
+//	public static double calculateMortgage(double principal, double annualInterest, int years) {
+//
+//		double monthlyInterest = (annualInterest / percent) / months;
+//		int payments = years * months;
+//		double mortgage = principal * (monthlyInterest * Math.pow((1 + monthlyInterest), payments)
+//				/ ((Math.pow((1 + monthlyInterest), payments) - 1)));
+//
+//		return mortgage;
+//	}
+//
+//	public static double calculateBalance(double principal, double annualInterest, int years,
+//			int numberOfPaymentsMade) {
+//
+//		double monthlyInterest = (annualInterest / percent) / months;
+//		int payments = years * months;
+//		double balance = principal
+//				* (Math.pow((1 + monthlyInterest), payments) - Math.pow((1 + monthlyInterest), numberOfPaymentsMade))
+//				/ (Math.pow((1 + monthlyInterest), payments) - 1);
+//
+//		return balance;
+//	}
 }

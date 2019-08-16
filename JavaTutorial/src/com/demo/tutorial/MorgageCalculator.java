@@ -30,6 +30,7 @@ public class MorgageCalculator {
 	public static void printMortgage(int principal, double interest, int years) {
 		System.out.println("MORTGAGE");
 		System.out.println("--------");
+		System.out.println("");
 		double mortgage = calculateMortgage(principal, interest, years);
 		System.out.println(NumberFormat.getCurrencyInstance().format(mortgage));
 	}
