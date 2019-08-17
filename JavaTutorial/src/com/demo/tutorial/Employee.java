@@ -7,15 +7,16 @@ public class Employee {
 	public static int numberOfEmployees;
 
 	
-	public Employee(int baseSalary) {
-		this(baseSalary, 0);
-	}
-	
 	//Here we declare a constructor, and initialize these fields to put this in a valid state
 	public Employee(int baseSalary, int hourlyRate) {
 		setBaseSalary(baseSalary);
 		setHourlyRate(hourlyRate);
 		numberOfEmployees++;
+	}
+	
+	//Here we can overload the constructor
+	public Employee(int baseSalary) {
+		this(baseSalary, 0);//Here we can call the employee constructor and we have option to pass either 1 or 2 parameters
 	}
 	
 	public static void printNumberOfEmployees() {//we only declare static when we want to call a method from the main method
@@ -50,7 +51,7 @@ public class Employee {
 	}
 
 	private void setHourlyRate(int hourlyRate) {
-		if (hourlyRate <= 0) {
+		if (hourlyRate < 0) {
 			throw new IllegalArgumentException("Cannot enter in a negative hourly rate");
 		} else
 			this.hourlyRate = hourlyRate;

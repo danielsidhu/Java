@@ -19,4 +19,3 @@ INDEX VERSION 1.131+C:\Users\sidhu\my_git_repos\Personal-Folder\.metadata\.plugi
 3384131066.index
 2380175872.index
 379664343.index
-1027275919.index
