@@ -27,6 +27,16 @@ public class Main {
 		
 		Browser browser = new Browser();
 		browser.navigate("String");
+		
+		Point point1 = new Point(1, 2);
+		Point point2 = new Point(1, 2);
+		System.out.println(point1.equals(point2));//this will get true as there are 2 different references memory but we override this method
+		System.out.println(point1 == point2);//this will get false as there are 2 different references in memory
+		
+		UIControl[] controls = {new TextBox(), new CheckBox()};//polymorphism 
+		for (UIControl control: controls) {
+			control.render();
+		}
 	}
 
 }
