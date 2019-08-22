@@ -37,6 +37,10 @@ public class Main {
 		for (UIControl control: controls) {
 			control.render();
 		}
+		
+		TaxCalculator calculator = new TaxCalculator2018(100_000);
+		TaxReport report = new TaxReport(calculator);
+		report.show();
 	}
 
 }
