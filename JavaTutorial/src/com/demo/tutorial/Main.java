@@ -16,6 +16,9 @@ public class Main {
 		TextBox textBox3 = new TextBox();//here we are storing the object TextBox() in the heap and textBox3 is referencing that object in the stack
 		textBox3.setText("Box 3");//that is why refer to these values as reference types 
 		
+		TextBox textBox = new TextBox();//this will call the base class then the proceeding sub classes 
+		System.out.println(textBox.isEnabled());
+		
 		//here we create an employee object
 //		Employee employee = new Employee();//this could also be called a constructor, it is used to construct a new objects. this is a default constructor
 		Employee employee = new Employee(500, 20);//this is a custom constructor to initialize our object with the fields initialized in a valid state always

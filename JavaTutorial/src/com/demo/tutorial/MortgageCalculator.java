@@ -1,5 +1,6 @@
 package com.demo.tutorial;
 
+//Declare a mortgage calculator class to calculate the mortgage
 public class MortgageCalculator {
 	/*
 	 * we declare these fields and encapsulate them, and remove the static keyword

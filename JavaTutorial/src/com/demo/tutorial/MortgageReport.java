@@ -1,14 +1,15 @@
 package com.demo.tutorial;
 
+//here we create the mortgage report class to create the reports 
 import java.text.NumberFormat;
 
 public class MortgageReport {
 
-	private MortgageCalculator calculator;//instantiate our mortgageCalculator class
+	private MortgageCalculator calculator;// instantiate our mortgageCalculator class
 	private NumberFormat currency;
-	
-	public MortgageReport(MortgageCalculator calculator) {//create a constructor to initialize the calculator field
-		this.calculator =calculator;
+
+	public MortgageReport(MortgageCalculator calculator) {// create a constructor to initialize the calculator field
+		this.calculator = calculator;
 		currency = NumberFormat.getCurrencyInstance();
 	}
 
