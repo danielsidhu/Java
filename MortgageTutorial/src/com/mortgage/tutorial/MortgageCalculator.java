@@ -9,9 +9,9 @@ public class MortgageCalculator {
 	private int percent = 100;
 	private int months = 12;
 
-	// generating the constructor
+	// generating the constructor to initialize our values
 	public MortgageCalculator(int principal, double interest, int years) {
-		super();
+		super();//keyword that is a reference to the parent class
 		this.principal = principal;
 		this.interest = interest;
 		this.years = years;
