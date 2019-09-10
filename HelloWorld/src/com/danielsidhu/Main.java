@@ -11,7 +11,7 @@ public class Main {
 		me.firstName = "Daniel";
 		me.lastName = "Sidhu";
 		
-		Users you = new Users();
+		Student you = new Student();
 		you.firstName = "Sherry";
 		you.lastName = "Hurtado";
 		
@@ -21,6 +21,9 @@ public class Main {
 		users.add(you);
 			
 		System.out.println(users.get(1).getFullName());
+		System.out.println(me.getFullName());
+		me.sayHello();
+		you.sayHello();
 		}
 	}
 
