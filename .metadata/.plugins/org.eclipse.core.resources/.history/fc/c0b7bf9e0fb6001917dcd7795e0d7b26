@@ -1,0 +1,26 @@
+package com.danielsidhu;
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("Hello World");// simple print statement
+
+		/*
+		 * When it comes to variables we have 2 types
+		 * 	- primative types
+		 * 		store simple values
+		 * 		we have: byte, short, int, long, float, double, char, boolean
+		 * 	- reference types
+		 * 		store complex objects
+		 */
+		
+		int age = 30;
+		// int is the type of variables,
+		// age is identifier
+		// = is the assignment operator
+		// 30 is the initial value
+		System.out.println(age);//printing out the age
+		
+		
+	}
+}

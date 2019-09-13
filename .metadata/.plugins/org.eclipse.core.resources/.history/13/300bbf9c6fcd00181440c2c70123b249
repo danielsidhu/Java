@@ -1,0 +1,31 @@
+package com.demo.collectionsFramework;
+
+import java.util.Hashtable;
+import java.util.Vector;
+
+public class VectorDemo {
+
+	@SuppressWarnings("rawtypes")
+	public static void main(String []args) {
+		
+		//Creating an array and it requires []
+		int arr[] = new int[] {1, 2, 3, 4};
+		
+		//Creating the vector
+		Vector<Integer> v = new Vector();
+		
+		//Creating the Hashtable
+		Hashtable<Integer, String> h = new Hashtable();
+		
+		//addElement() to add an element
+		v.addElement(1);
+		v.addElement(2);
+		
+		//put() to insert the element at a specified index
+		h.put(1, "geeks");
+		h.put(2, "nerds");
+		
+		System.out.println(v);
+		System.out.println(h);
+	}
+}

@@ -1,0 +1,15 @@
+package com.danielsidhu;
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("Hello World");// simple print statement
+
+		int age = 30;
+		// int is the type of variables,
+		// age is identifier
+		// = is the assignment operator
+		// 30 is the initial value
+		System.out.println(age);
+	}
+}
